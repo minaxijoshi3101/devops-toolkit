@@ -1,0 +1,11 @@
+global:
+  scrape_interval: 1m # By default, scrape targets every 15 seconds.
+
+scrape_configs:
+  # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090','192.168.18.3:9182']
+  - job_name: 'node'
+    static_configs:
+      - targets: ['192.168.18.11:9100']
